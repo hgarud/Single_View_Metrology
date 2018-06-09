@@ -26,6 +26,7 @@ YZ = cv2.warpPerspective(img,Hyz,(a,b), flags = cv2.WARP_INVERSE_MAP)
 XZ = cv2.warpPerspective(img,Hxz,(a,b), flags = cv2.WARP_INVERSE_MAP)
 
 ```
+where Hxy, Hyz, and Hxz are the homography matrices for the three coordinate axes respectively.
 
 Using view3dscene, we are able to stitch these three planes together to form 3D object, albeit requires some manual adjustment for image centering and proper scale.
 
