@@ -14,8 +14,21 @@ Using these and reference coordinates in the world coordinate system, we are abl
 After we have the projection matrix, we extract affine homography planes for each X-Y, Y-Z, X-Z planes, apply this perspective transform to the original image and get three homography planes of the image.
 Using view3dscene, we are able to stitch these three planes together to form 3D object.
 
-The original input image:
+### The original input image:
 ![alt text][input_image]
+
+### The annotation interface to extract lines (LabelMe):
+![alt text][anno_image]
+
+### The homography planes after calculating the projection matrix:
+#### XY:
+![alt text][XY_image]
+
+#### YZ:
+![alt text][YZ_image]
+
+#### XZ:
+![alt text][XZ_image]
 
 ## Requirements
 * Python 3.6.2
@@ -30,4 +43,8 @@ The original input image:
 [view3dscene]: https://castle-engine.io/view3dscene.php
 [This]: http://ksimek.github.io/2012/08/14/decompose/
 [Wikipedia]: https://en.wikipedia.org/wiki/Camera_matrix
-[input_image]: https://github.com/hgarud/Single_View_Metrology/ 
+[input_image]: https://github.com/hgarud/Single_View_Metrology/blob/master/images/input/s8_test.jpg
+[anno_image]: https://github.com/hgarud/Single_View_Metrology/blob/master/images/screenshot_labelme.png
+[XY_image]: https://github.com/hgarud/Single_View_Metrology/blob/master/images/output/XY.JPG
+[YZ_image]: https://github.com/hgarud/Single_View_Metrology/blob/master/images/output/YZ.JPG
+[XZ_image]: https://github.com/hgarud/Single_View_Metrology/blob/master/images/output/XZ.JPG
