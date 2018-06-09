@@ -1,4 +1,4 @@
-# Single_View_Metrology
+# Single View Metrology
 
 ## Requirements
 * Python 3.6.2
@@ -17,8 +17,17 @@ The projection matrix, according to [Wikipedia], is a 3X4 matrix which describes
 In order to predict these parameters, we need vanishing points in all three coordinate axes. Vanishing points are calculated using the cross product of two "parallel" lines along each of the 3 coordinate axes. These lines were annotated using the LabelMe tool. Conversely, we can use extract parallel lines using Line Segment Detector(LSD), then apply RANSAC to further refine these lines to get better accuracy in estimating the vanishing points.
 Using these and reference coordinates in the world coordinate system, we are able to estimate the camera projection matrix.
 
-After we have the projection matrix, we extract affine homography planes for each X-Y, Y-Z, X-Z planes, apply this perspective transform to the original image and get three homography planes of the image.
-Using view3dscene, we are able to stitch these three planes together to form 3D object.
+After we have the projection matrix, we extract affine homography planes for each X-Y, Y-Z, X-Z planes, apply this perspective transform to the original image and get three homography planes of the image. This is done by performing a warp function as follows:
+
+``` Python
+
+XY = cv2.warpPerspective(img,Hxy,(a,b), flags = cv2.WARP_INVERSE_MAP)
+YZ = cv2.warpPerspective(img,Hyz,(a,b), flags = cv2.WARP_INVERSE_MAP)
+XZ = cv2.warpPerspective(img,Hxz,(a,b), flags = cv2.WARP_INVERSE_MAP)
+
+```
+
+Using view3dscene, we are able to stitch these three planes together to form 3D object, albeit requires some manual adjustment for image centering and proper scale.
 
 ### The original input image:
 ![alt text][input_image]

@@ -35,23 +35,14 @@ def line_intersection(line1, line2):
     return x, y, 1
 
 def x_vanish(points):
-    #temp = np.cross(np.cross(points[0,:], points[1,:]),
-     #               np.cross(points[5,:], points[2,:]))
-
 	temp = line_intersection((points[0,:], points[1,:]), (points[5,:], points[2,:]))
-
-	#return temp/temp[2]
 	return temp
+
 def y_vanish(points):
-    #temp = np.cross(np.cross(points[2,:], points[3,:]),
-    #                np.cross(points[5,:], points[4,:]))
-    #return temp/temp[2]
 	temp = line_intersection((points[2,:], points[3,:]), (points[5,:], points[4,:]))
 	return temp
+
 def z_vanish(points):
-    #temp = np.cross(np.cross(points[0,:], points[5,:]),
-    #                np.cross(points[1,:], points[2,:]))
-    #return temp/temp[2]
     temp = line_intersection((points[0,:], points[5,:]), (points[1,:], points[2,:]))
     return temp
 
