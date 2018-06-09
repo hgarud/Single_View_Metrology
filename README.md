@@ -1,5 +1,11 @@
 # Single_View_Metrology
 
+## Requirements
+* Python 3.6.2
+* OpenCV 3.3.0
+* [LabelMe](http://labelme.csail.mit.edu/Release3.0/)
+* [view3dscene] (to view the 3D model)
+
 ## Abstract
 Reconstruction of a 3 dimensional object/scene by computing necessary and sufficient aspects of the affine 3-D geometry of the object/scene in consideration.
 
@@ -29,12 +35,6 @@ Using view3dscene, we are able to stitch these three planes together to form 3D 
 
 #### XZ:
 ![alt text][XZ_image]
-
-## Requirements
-* Python 3.6.2
-* OpenCV 3.3.0
-* [LabelMe](http://labelme.csail.mit.edu/Release3.0/)
-* [view3dscene] (to view the 3D model)
 
 ## References
 * Criminisi, A., Reid, I. and Zisserman, A., 2000. Single view metrology. International Journal of Computer Vision, 40(2), pp.123-148.
